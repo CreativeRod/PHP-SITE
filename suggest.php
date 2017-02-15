@@ -1,6 +1,7 @@
 <!-- Always add the var for the page title before the include file -->
 <?php
 $pageTitle = "Suggest A Media Item";
+$section = "suggest";
 
 include("inc/header.php"); ?>
 

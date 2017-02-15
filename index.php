@@ -1,7 +1,7 @@
 <!-- Always add the var for the page title before the include file -->
 <?php
 $pageTitle = "Personal Media Library";
-
+$section = null;
 include("inc/header.php"); ?>
 
 		<div class="section catalog random">

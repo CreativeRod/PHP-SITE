@@ -4,16 +4,21 @@
 # $_GET queries the catalog looking for (BOOKS, MOVIES, MUSIC) if/else if determines whats selected and produces the correct page title
 -->
 
-<?php 
+<?php
 $pageTitle = "Full Catalog";
+$section = null;
+
 
 if(isset($_GET["cat"])) {
   if($_GET["cat"] == "books") {
     $pageTitle = "Books";
+    $section = "books";
   } else if($_GET["cat"] == "movies") {
     $pageTitle = "Movies";
+    $section = "movies";
   } else if($_GET["cat"] == "music") {
     $pageTitle = "Music";
+    $section = "music";
   }
 }
 
