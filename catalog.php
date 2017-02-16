@@ -5,11 +5,8 @@
 -->
 
 <?php
-$catalog = array(
-  "Design Patterns",
-  "Forrest Gump",
-  "Beethoven"
-);
+include("inc/data.php");
+include("inc/functions.php");
 
 $pageTitle = "Full Catalog";
 $section = null;
@@ -33,12 +30,16 @@ include("inc/header.php"); ?>
 
     <div class="wrapper">
 
-      <h1><?php echo $pageTitle; ?></h1>
-      <ul>
-        <!--Added a foreach here to display or array items we list-->
+      <h1><?php
+      if($section != null) {
+        echo "<a href='catalog.php'>Full Catalog</a> &gt; ";
+      }
+      echo $pageTitle; ?></h1>
+      <ul class="items">
         <?php
-          foreach($catalog as $item) {
-            echo "<li>" . $item . "</li>";
+          $categories = array_category($catalog, $section);
+          foreach($categories as $id) {
+            echo get_item_html($id, $catalog[$id]);
         }
         ?>
       </ul>
